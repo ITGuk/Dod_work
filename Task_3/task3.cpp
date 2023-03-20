@@ -1,5 +1,5 @@
-//Стиснути масив, видаливши з нього всі елементи, модуль яких знаходиться в інтервалі
-//[а, b]. Елементи, що звільнилися в кінці масиву, заповнити нулями.
+//Compress the array, removing from it all elements whose module is in the interval
+//[Р°, b]. Fill the free elements at the end of the array with zeros.
 
 #include <iostream>
 using namespace std;
@@ -9,19 +9,19 @@ int main()
     srand(time(NULL));
     const int SIZE = 15;
     int arr[SIZE];
-    int a = 3;//Поч інтервалу
-    int b = 13;//Кінець інтервалу
+    int a = 3;
+    int b = 13;
 
     for (int i = 0; i < SIZE; i++)
     {
         int ran = rand() % 15 + 1;
         if (ran >= a && ran <= b)
         {
-            arr[i] = ran;//наповнення массива ранд числами,якщо ранд число від 3 до 13
-        }               //якщо число не відопвідає діапазону тоді заміняється нулем
+            arr[i] = ran;//filling the array with rand numbers, if the rand number is from 3 to 13
+        }               //if the number does not match the range then it is replaced by zero
         else
         {
-            arr[i] = 0;//заміна на ноль
+            arr[i] = 0;
         }
         cout << arr[i] << " ";
     }
@@ -36,12 +36,12 @@ int main()
                 tim = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = tim;
-            }//відсортували массив методом пузирька
+            }//sorted the array using the bubble method
         }
     }
     for (int i = 0; i < SIZE; i++)
     {
-        cout << arr[i] << " ";//вивід массива
+        cout << arr[i] << " ";
     }
 
     cout << endl;
