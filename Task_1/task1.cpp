@@ -1,10 +1,12 @@
-//Змінити порядок розміщення елементів в масиві на зворотний.
-
+//Г‡Г¬ВіГ­ГЁГІГЁ ГЇГ®Г°ГїГ¤Г®ГЄ Г°Г®Г§Г¬ВіГ№ГҐГ­Г­Гї ГҐГ«ГҐГ¬ГҐГ­ГІВіГў Гў Г¬Г Г±ГЁГўВі Г­Г  Г§ГўГ®Г°Г®ГІГ­ГЁГ©.
 #include <iostream>
+#include <Windows.h>
 using namespace std;
 
 int main()
 {
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
     //work 1 
     const int SIZE = 15;
     int arr[SIZE];
