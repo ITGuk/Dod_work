@@ -1,50 +1,51 @@
+//Convert the array - rearrange its elements so that at first
+//all elements that differ from the maximum by no more than 20% were located,
+//and then all the others.
+
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    //ѕеретворити масив Ц переставити м≥сц€ми його елементи так, щоб спочатку
-    //розташовувалис€ вс≥ елементи, що в≥др≥зн€ютьс€ в≥д максимального не б≥льше н≥ж на 20 %,
-    //а пот≥м Ц вс≥ ≥нш≥.
     const int SIZE = 15;
-    int arr[SIZE] = {};//початковий масив
-    int arr1[SIZE] = {};//
-    int max = 0;//зм≥нна дл€ максимального часла
-    int max_ind = 0;//ск≥льки чисел б≥льше н≥ж макс число - 20%
+    int arr[SIZE] = {};
+    int arr1[SIZE] = {};
+    int max = 0;
+    int max_ind = 0;//how many numbers are more than the max number - 20%
     srand(time(NULL));
     for (int i = 0; i < SIZE; i++)
     {
-        int a = rand() % 30 + 1;//створенн€ ранд чисел в≥д 1 до 30
+        int a = rand() % 30 + 1;
         arr[i] = a;
-        cout << arr[i] << " ";//вив≥д початкового масиву
+        cout << arr[i] << " ";
     }
     cout << endl;
     for (int i = 0; i < SIZE; i++)
     {
         if (arr[i] > max)
         {
-            max = arr[i];//пошук ≥ндекса максимального числа
+            max = arr[i];//finding the maximum number
         }
     }
     cout << "Max num: " << max;
-    int vs = (max * 20) / 100;//ск≥льки 20% в≥д макс числа
-    int vs1 = max - vs;//макс число в≥дн≥маЇмо в≥д тих проц шо в нас вийшло
+    int vs = (max * 20) / 100;//how much is 20% of the max number
+    int vs1 = max - vs;//We subtract the maximum number from the percentages that we got
     cout << endl << "Max num - 20% = " << vs1;
 
     for (int i = 0, k = 0; i < SIZE; i++)
     {
         if (arr[i] >= vs1)
         {
-            arr1[k] = arr[i];//ЌаповнюЇм массив числами €к≥ не менш≥ н≥ж макс - 20%
-            k++;//–ахуЇ т≥льки тод≥ коли число не менше н≥ж макс - 20%
-            max_ind++;//ўоб знати з €кого починати м≥сц€ в масив≥ наповнюти числами €к≥ менш≥
+            arr1[k] = arr[i];//We fill the array with numbers that are not less than max - 20%
+            k++;//Counts only when the number is not less than max - 20%
+            max_ind++;//In order to know where to start, fill the places in the array with numbers that are smaller
         }
     }
     for (int i = 0; i < SIZE; i++)
     {
         if (arr[i] < vs1)
         {
-            arr1[max_ind] = arr[i];//ЌаповнюЇм массив числами €к≥ менш≥ н≥ж макс - 20%
+            arr1[max_ind] = arr[i];//We fill the array with numbers that are less than the max - 20%
             max_ind++;
         }
     }
@@ -52,7 +53,7 @@ int main()
     for (int i = 0; i < SIZE; i++)
     {
 
-        cout << arr1[i] << " ";//¬ив≥д готового массива
+        cout << arr1[i] << " ";
     }
 
 }
