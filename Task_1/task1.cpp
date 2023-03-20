@@ -1,12 +1,9 @@
-//Çì³íèòè ïîðÿäîê ðîçì³ùåííÿ åëåìåíò³â â ìàñèâ³ íà çâîðîòíèé.
+//Change the order of placement of elements in the array to reverse.
 #include <iostream>
-#include <Windows.h>
 using namespace std;
 
 int main()
 {
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
     //work 1 
     const int SIZE = 15;
     int arr[SIZE];
