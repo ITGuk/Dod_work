@@ -1,5 +1,5 @@
-//Замінити всі від’ємні елементи масиву їх квадратами 
-//і впорядкувати елементи масиву за зростанням.
+//Replace all negative elements of the array with their squares 
+//and order the elements of the array in ascending order.
 
 #include <iostream>
 using namespace std;
@@ -11,24 +11,24 @@ int main()
     srand(time(NULL));
     for (int i = 0; i < SIZE; i++)
     {
-        int a = rand() % 20 - 10;//рандомні числа від -10 до 10
+        int a = rand() % 20 - 10;
         arr[i] = a;
-        cout << arr[i] << " ";//вивід масива з рандомними числами
+        cout << arr[i] << " ";
     }
     cout << endl;
     for (int i = 0; i < SIZE; i++)
     {
         if (arr[i] < 0)
         {
-            arr[i] *= -1;//міняємо число з відємного на додатнє
+            arr[i] *= -1;//change the number from negative to positive
         }
     }
     for (int j = 0; j < SIZE; j++)
     {
-        arr[j] *= 3;//підводимо до квадрату
-        cout << arr[j] << " ";//виводимо массив з числами в квадраті
+        arr[j] *= 3;//round up to a square
+        cout << arr[j] << " ";
     }
-    int temp = 0;//тимчасова змінна для порівння двох елементів
+    int temp = 0;//temporary variable to compare two elements
     for (int i = 0; i < SIZE - 1; i++)
     {
         for (int j = 0; j < SIZE - 1; j++)
@@ -38,13 +38,13 @@ int main()
                 temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
-                //сортування за зростанням
+                //sort by growth
             }
         }
     }
     cout << endl;
     for (int i = 0; i < SIZE; i++)
     {
-        cout << arr[i] << " ";//Вивід готового масиву
+        cout << arr[i] << " ";
     }
 }
